@@ -32,17 +32,58 @@ const restaurant = {
   },
 };
 
-const arr = [2, 3, 4];
-const arr2 = ['pizza', 'water', 'cellphone']
+// const arr = [2, 3, 4];
+// const arr2 = ['pizza', 'water', 'cellphone']
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
 
-console.log(...newArr);
+// console.log(...newArr);
 
-let arr3 = [...arr, ...arr2];
-console.log(arr3);
+// let arr3 = [...arr, ...arr2];
+// console.log(arr3);
 
-for (const item of arr3.entries()) {
-  console.log(item);
+// for (const item of arr3.entries()) {
+//   console.log(item);
+// }
+
+const keys = Object.keys(restaurant);
+console.log(keys);
+
+const values = Object.values(restaurant);
+console.log(values);
+
+const mySet = new Set([`Pasta`, `Pizza`, `Pizza`, 3, 4, 10, 5, 10]);
+console.log(mySet);
+
+const mySet2 = new Set(`mike`);
+console.log(mySet2);
+
+//Convert Set to Array
+
+const myArray = [...mySet];
+console.log(myArray);
+
+
+const myrestaurant = new Map();
+myrestaurant.set(`name`, `McDonalds`);
+myrestaurant.set(`type`, `Fast food`);
+
+console.log(myrestaurant);
+
+myrestaurant.set(`open`, 7)
+.set(`close`, 22)
+.set('mascot', `ronald`)
+console.log(myrestaurant);
+
+
+console.log(myrestaurant.get(`name`));
+
+const question = new Map([
+  [`question`, ``]
+
+])
+
+for (const [key, value] of myrestaurant) {
+  console.log(key, value);
 }
