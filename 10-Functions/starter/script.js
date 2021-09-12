@@ -38,7 +38,7 @@ const arrowGreet = (greeting) => {
 
 arrowGreet(`Whatssaaaa`)(`Steve`);
 
-const myAirline = {
+const lufthansa = {
     airline: `Lufthansa`,
     iataCode: `LH`,
     bookings: [],
@@ -50,16 +50,57 @@ const myAirline = {
     }
 };
 
-myAirline.book(239, `Jonas Anderson`);
-myAirline.book(333, `Bob Marley`);
-myAirline.book(222, `Mike`);
-console.log(myAirline);
+lufthansa.book(239, `Jonas Anderson`);
+lufthansa.book(333, `Bob Marley`);
+lufthansa.book(222, `Mike`);
+console.log(lufthansa);
 
 const euroWings = {
-    name: `Eurowings`,
-    itaCode: `EW`,
+    airline: `Eurowings`,
+    iataCode: `EW`,
     bookings: [],
 };
 
-const book = myAirline.book;
-book(`001`, `Jeff`);
+const book = lufthansa.book;
+// won't work
+// book(`001`, `Jeff`);
+
+book.call(euroWings, 23, "jane doe");
+
+book.call(lufthansa, 22, 'homer');
+
+const bookEW = book.bind(euroWings)
+
+bookEW(555, `marge`);
+
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function() {
+    console.log(this);
+
+    this.planes++;
+    console.log(this.planes)
+}
+
+document.querySelector(`.buy`).addEventListener(`click`, lufthansa.buyPlane.bind(lufthansa));
+
+const FUNCTION_NAME = (PARAM1, PARAM2) => {
+
+}
+
+
+(function() {
+    console.log(`hi`);
+})();
+
+let f;
+
+const g = function () {
+    const a = 23;
+    f = function () {
+        console.log(a * 2);
+    };
+};
+
+g();
+f();
