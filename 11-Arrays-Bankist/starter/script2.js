@@ -12,3 +12,5 @@ array.splice
 for (const iterator of object) {
     
 }
+
+

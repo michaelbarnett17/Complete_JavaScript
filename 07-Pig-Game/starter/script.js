@@ -84,3 +84,4 @@ for (let i = 0; i < players.length; i++) {
     players[i].addEventListener(`click`, rollDice);
     players[i].addEventListener(`click`, hold);
 }
+

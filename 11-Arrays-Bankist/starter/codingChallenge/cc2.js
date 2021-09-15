@@ -25,4 +25,8 @@ const totalAges = dogsJulia.reduce(function (accumulator, currentElement, curren
     return accumulator + currentElement
 }, 0);
 
-console.log(totalAges/dogsJulia.length);
+
+
+
+
+console.log(dogsJulia.find(x => x < 3));
