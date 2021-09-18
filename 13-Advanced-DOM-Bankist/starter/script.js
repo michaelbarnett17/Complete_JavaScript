@@ -8,8 +8,6 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
-console.log(btnsOpenModal);
-
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -36,5 +34,9 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+document.querySelector('.nav').addEventListener('click', function (e) {
 
-
+    if (e.target.classList.contains('nav__link')) {
+    console.log(e.target);
+    }
+});

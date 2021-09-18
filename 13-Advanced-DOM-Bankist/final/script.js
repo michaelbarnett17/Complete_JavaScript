@@ -82,11 +82,9 @@ btnScrollTo.addEventListener('click', function (e) {
 // 1. Add event listener to common parent element
 // 2. Determine what element originated the event
 
-document.querySelector('.nav__links').addEventListener('click', function (e) {
-  e.preventDefault();
+document.querySelector('CSS_SELECTOR_FOR_COMMON_PARENT').addEventListener('click', function (e) {
 
-  // Matching strategy
-  if (e.target.classList.contains('nav__link')) {
+  if (e.target.classList.contains('CSS_SELECTOR_FOR_SOME_CLASS_SHARED_BY_CHILDREN')) {
     const id = e.target.getAttribute('href');
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   }
